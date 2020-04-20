@@ -1,0 +1,7 @@
+{
+    "app.js": {
+        "assets": [
+            "style/store.css"
+        ]
+    }
+}

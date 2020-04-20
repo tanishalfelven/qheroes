@@ -1,0 +1,19 @@
+.nav {
+    width: 98%;
+    height: 15%;
+
+    padding: 0.1rem;
+    margin: 0;
+
+    grid-area: nav;
+}
+
+.navbutton {
+    font-size: 3rem;
+    border: 1px solid black;
+    box-shadow: 1px 1px black;
+}
+
+.togglestore {
+    composes: navbutton;
+}

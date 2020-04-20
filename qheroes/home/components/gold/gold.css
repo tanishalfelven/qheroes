@@ -1,0 +1,21 @@
+.goldwidget {
+    grid-area: gold;
+
+    width: 25rem;
+
+    margin: auto;
+}
+
+.gold {
+    text-align: center;
+}
+
+.mine {
+    font-size: 3rem;
+
+    margin: 0.25rem auto;
+
+    border: 1px solid black;
+
+    box-shadow: 1px 1px black;
+}

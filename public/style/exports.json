@@ -1,0 +1,29 @@
+{
+    "qheroes/home/components/gold/gold.css": {
+        "goldwidget": "mc1e7f2ccf_goldwidget",
+        "gold": "mc1e7f2ccf_gold",
+        "mine": "mc1e7f2ccf_mine"
+    },
+    "qheroes/home/components/layout/layout.css": {
+        "layout": "mce64e9766_layout"
+    },
+    "qheroes/home/components/layout/nav/nav.css": {
+        "nav": "mcbf211cd9_nav",
+        "navbutton": "mcbf211cd9_navbutton",
+        "togglestore": "mcbf211cd9_navbutton mcbf211cd9_togglestore"
+    },
+    "qheroes/home/components/modal/modal.css": {
+        "modal": "mcc687e49d_modal",
+        "layout": "mcc687e49d_layout",
+        "close": "mcc687e49d_close",
+        "content": "mcc687e49d_content"
+    },
+    "qheroes/home/home.css": {
+        "home": "mc4c94559e_home"
+    },
+    "qheroes/store/store.css": {
+        "header": "mc69c30189_header",
+        "offers": "mc69c30189_offers",
+        "offer": "mc69c30189_offer"
+    }
+}

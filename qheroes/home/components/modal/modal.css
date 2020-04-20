@@ -1,0 +1,56 @@
+.modal {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.layout {
+    position: absolute;
+
+    width: 50rem;
+    height: 45rem;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: auto;
+    padding: 2rem;
+
+    background: white;
+
+    box-shadow: 0 0 15px black;
+
+    border-radius: 1rem;
+}
+
+.close {
+    position: absolute;
+
+    top: -1rem;
+    right: -1rem;
+
+    height: 3rem;
+    width: 3rem;
+
+    font-size: 3rem;
+
+    color: white;
+    background: #ff0000;
+    border: 3px solid white;
+    border-radius: 100%;
+    box-shadow: 0 0 5px black;
+
+    line-height: 0;
+}
+
+.content {
+
+}

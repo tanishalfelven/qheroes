@@ -1,0 +1,35 @@
+body * {
+    display: block;
+
+    background: none;
+
+    border: none;
+
+    font-family: "Zilla Slab", Roboto;
+}
+
+html, body, .home {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: "Zilla Slab";
+    src:
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Bold.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-BoldItalic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Italic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-LightItalic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Medium.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-MediumItalic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Regular.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-SemiBold.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-SemiBoldItalic.tff) format("truetype");
+}
