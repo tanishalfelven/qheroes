@@ -1,0 +1,50 @@
+.party {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+
+    padding: 0.5rem;
+}
+
+.header {
+    font-size: 3rem;
+}
+
+.adventurer {
+    max-width: 14rem;
+}
+
+.pic {
+    width: 6rem;
+    height: 6rem;
+
+    margin: auto;
+
+    border: solid 1px black;
+}
+
+.tag {
+    display: flex;
+
+    justify-content: space-evenly;
+
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.level {
+    width: 1.8rem;
+    min-height: 1.8rem;
+
+    border: 1px solid black;
+    border-radius: 15%;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.name {
+
+}

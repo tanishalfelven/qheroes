@@ -1,0 +1,18 @@
+.back {
+    font-size: 2rem;
+
+    border: 1px solid black;
+
+    box-shadow: 1px 1px black;
+}
+
+.header {
+    font-size: 3rem;
+}
+
+.pic {
+    width: 10rem;
+    height: 10rem;
+
+    border: 1px solid black;
+}

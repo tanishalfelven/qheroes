@@ -1,30 +1,30 @@
 <link rel="stylesheet" href="./modal.css">
 
 {#if children.length}
+{#each children as { component, children, props } (component.name)}
 <div
-    class="{css.modal}"
-    on:click="{hide}"
+    class="{css.layout}"
+    transition:fly="{{duration: 500, x: -1000, y:-1000, opacity: 0.5, easing: quintOut}}"
 >
-    <div
-        class="{css.layout}"
-        on:click|stopPropagation
+    <button
+        class="{css.close}"
+        on:click="{hide}"
     >
-        <button
-            class="{css.close}"
-            on:click="{hide}"
-        >
-            ×
-        </button>
-        <div class="{css.content}">
-            {#each children as { component, children, props }}
-            <svelte:component this={component}/>
-            {/each}
-        </div>
+        ×
+    </button>
+    <div
+        on:click|stopPropagation
+        class="{css.content}"
+    >
+        <svelte:component this={component} {...props}/>
     </div>
 </div>
+{/each}
 {/if}
 
 <script>
+    import { fly } from "svelte/transition";
+    import { quintOut } from "svelte/easing";
     import { send } from "qheroes/shared/stores/statechart.js";
 
     export let children = [];

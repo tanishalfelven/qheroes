@@ -1,4 +1,9 @@
 {
+    "qheroes/adventurer/adventurer.css": {
+        "back": "mc3ce3b453_back",
+        "header": "mc3ce3b453_header",
+        "pic": "mc3ce3b453_pic"
+    },
     "qheroes/home/components/gold/gold.css": {
         "goldwidget": "mc1e7f2ccf_goldwidget",
         "gold": "mc1e7f2ccf_gold",
@@ -9,17 +14,24 @@
     },
     "qheroes/home/components/layout/nav/nav.css": {
         "nav": "mcbf211cd9_nav",
-        "navbutton": "mcbf211cd9_navbutton",
-        "togglestore": "mcbf211cd9_navbutton mcbf211cd9_togglestore"
+        "navbutton": "mcbf211cd9_navbutton"
     },
     "qheroes/home/components/modal/modal.css": {
-        "modal": "mcc687e49d_modal",
         "layout": "mcc687e49d_layout",
         "close": "mcc687e49d_close",
         "content": "mcc687e49d_content"
     },
     "qheroes/home/home.css": {
         "home": "mc4c94559e_home"
+    },
+    "qheroes/party/party.css": {
+        "party": "mc14848c1d_party",
+        "header": "mc14848c1d_header",
+        "adventurer": "mc14848c1d_adventurer",
+        "pic": "mc14848c1d_pic",
+        "tag": "mc14848c1d_tag",
+        "level": "mc14848c1d_level",
+        "name": "mc14848c1d_name"
     },
     "qheroes/store/store.css": {
         "header": "mc69c30189_header",

@@ -50,6 +50,8 @@ button {
 }
 /* qheroes/home/components/layout/nav/nav.css */
 .mcbf211cd9_nav {
+    display: flex;
+
     width: 98%;
     height: 15%;
 
@@ -59,9 +61,25 @@ button {
     grid-area: nav;
 }
 .mcbf211cd9_navbutton {
-    font-size: 3rem;
-    border: 1px solid black;
-    box-shadow: 1px 1px black;
+    --color: black;
+
+    height: 4rem;
+    min-width: 11rem;
+
+    margin: 0.5rem;
+
+    color: var(--color);
+
+    font-size: 2.5rem;
+    border: 1px solid var(--color);
+
+    transition: box-shadow 400ms;
+}
+.mcbf211cd9_navbutton:hover {
+    box-shadow: 3px 3px var(--color);
+}
+.mcbf211cd9_navbutton[data-selected="true"] {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 /* qheroes/home/components/gold/gold.css */
 .mc1e7f2ccf_goldwidget {
@@ -84,22 +102,11 @@ button {
     box-shadow: 1px 1px black;
 }
 /* qheroes/home/components/modal/modal.css */
-.mcc687e49d_modal {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100vh;
-
-    background: rgba(0, 0, 0, 0.6);
-}
 .mcc687e49d_layout {
     position: absolute;
 
-    width: 50rem;
-    height: 45rem;
+    width: 90vw;
+    height: 50vh;
 
     top: 0;
     left: 0;
@@ -107,7 +114,7 @@ button {
     bottom: 0;
 
     margin: auto;
-    padding: 2rem;
+    padding: 1rem;
 
     background: white;
 
@@ -121,13 +128,13 @@ button {
     top: -1rem;
     right: -1rem;
 
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
 
     font-size: 3rem;
 
     color: white;
-    background: red;
+    background: #ff0000;
     border: 3px solid white;
     border-radius: 100%;
     box-shadow: 0 0 5px black;
@@ -136,4 +143,94 @@ button {
 }
 .mcc687e49d_content {
 
+}
+/* qheroes/store/store.css */
+.mc69c30189_header {
+    font-size: 3rem;
+}
+.mc69c30189_offers {
+
+}
+.mc69c30189_offer {
+    display: flex;
+
+    height: 7rem;
+    width: 100%;
+
+    margin-bottom: 1rem;
+
+    justify-content: space-around;
+    border: 1px solid black;
+    font-size: 2.5rem;
+
+    transition: box-shadow 500ms;
+}
+.mc69c30189_offer:hover {
+    box-shadow: 0 0 3px black;
+}
+.mc69c30189_offer[data-available="false"] {
+    color: #d3d3d3;
+    border: 1px solid #d3d3d3;
+}
+/* qheroes/party/party.css */
+.mc14848c1d_party {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+
+    padding: 0.5rem;
+}
+.mc14848c1d_header {
+    font-size: 3rem;
+}
+.mc14848c1d_adventurer {
+    max-width: 14rem;
+}
+.mc14848c1d_pic {
+    width: 6rem;
+    height: 6rem;
+
+    margin: auto;
+
+    border: solid 1px black;
+}
+.mc14848c1d_tag {
+    display: flex;
+
+    justify-content: space-evenly;
+
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+.mc14848c1d_level {
+    width: 1.8rem;
+    min-height: 1.8rem;
+
+    border: 1px solid black;
+    border-radius: 15%;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.mc14848c1d_name {
+
+}
+/* qheroes/adventurer/adventurer.css */
+.mc3ce3b453_back {
+    font-size: 2rem;
+
+    border: 1px solid black;
+
+    box-shadow: 1px 1px black;
+}
+.mc3ce3b453_header {
+    font-size: 3rem;
+}
+.mc3ce3b453_pic {
+    width: 10rem;
+    height: 10rem;
+
+    border: 1px solid black;
 }

@@ -17,8 +17,36 @@ service.start();
 const readonlyTree = readonly(tree);
 const send = service.send;
 
+const matches = (path) => {
+    const states = path.split(".");
+
+    let current = service.state.value;
+
+    return states.every((state) => {
+        if (current === state) {
+            return true;
+        }
+
+        if (!current[state]) {
+            return false;
+        }
+
+        current = current[state];
+
+        return true;
+    });
+};
+
+const matching = writable(matches);
+const readonlyMatching = readonly(matching);
+
+service.onTransition(() => {
+    matching.set(matches);
+});
+
 export {
     readonlyTree as tree,
 
     send,
+    readonlyMatching as matches,
 };
