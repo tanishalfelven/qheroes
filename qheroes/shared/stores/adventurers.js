@@ -4,6 +4,7 @@ import ADVENTURERS from "qheroes/shared/data/adventurers.js"
 import createAdventurer from "qheroes/shared/adventurer-creator.js";
 import readonly from "qheroes/shared/readonly.js";
 import timer from "qheroes/shared/timer.js";
+import performJob from "qheroes/shared/perform-job.js";
 
 import { tick } from "./gold.js";
 
@@ -40,14 +41,21 @@ const addAdventurer = (id) => {
 };
 
 timer(1000, (i) => {
-    get(party).forEach(({ UID, rate, interval }) => {
-        // refill on interval
-        if ((i + UID) % interval) {
-            return;
-        }
+    party.update(($party) => {
+        $party.forEach((adventurer) => {
+            const { UID, rate, interval } = adventurer;
 
+            // refill on interval
+            if ((i + UID) % interval) {
+                return adventurer;
+            }
 
-        tick(rate);
+            tick(rate);
+
+            return $party.set(UID, performJob(adventurer));
+        });
+
+        return $party;
     });
 });
 

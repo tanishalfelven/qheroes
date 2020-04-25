@@ -1,0 +1,19 @@
+.bar {
+    width: 10rem;
+    height: 1rem;
+
+    margin-top: 0.5rem;
+
+    border: 1px solid black;
+    border-radius: 0.5rem;
+
+    overflow: hidden;
+}
+
+.fill {
+    --fill: 0;
+
+    width: var(--fill, 0);
+    height: 100%;
+    background-color: rgb(90, 142, 226);
+}

@@ -4,6 +4,10 @@
         "header": "mc3ce3b453_header",
         "pic": "mc3ce3b453_pic"
     },
+    "qheroes/adventurer/components/xpbar.css": {
+        "bar": "mc07ee471c_bar",
+        "fill": "mc07ee471c_fill"
+    },
     "qheroes/home/components/gold/gold.css": {
         "goldwidget": "mc1e7f2ccf_goldwidget",
         "gold": "mc1e7f2ccf_gold",

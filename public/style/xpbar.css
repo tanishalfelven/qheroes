@@ -1,0 +1,310 @@
+/* qheroes/home/home.css */
+body * {
+    display: block;
+
+    background: none;
+
+    border: none;
+
+    font-family: "Zilla Slab", Roboto;
+}
+
+html, body, .mc4c94559e_home {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: "Zilla Slab";
+    src:
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Bold.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-BoldItalic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Italic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-LightItalic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Medium.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-MediumItalic.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-Regular.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-SemiBold.tff) format("truetype"),
+        url(qheroes/shared/font/Zilla Slab/ZillaSlab-SemiBoldItalic.tff) format("truetype");
+}
+
+/* qheroes/home/components/layout/layout.css */
+.mce64e9766_layout {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template:
+        "nav"  15%
+        "."    auto
+        "gold" 15% /
+        100%
+}
+/* qheroes/home/components/layout/nav/nav.css */
+.mcbf211cd9_nav {
+    display: flex;
+
+    width: 98%;
+    height: 15%;
+
+    padding: 0.1rem;
+    margin: 0;
+
+    grid-area: nav;
+}
+.mcbf211cd9_navbutton {
+    --color: black;
+
+    height: 4rem;
+    min-width: 11rem;
+
+    margin: 0.5rem;
+
+    color: var(--color);
+
+    font-size: 2.5rem;
+    border: 1px solid var(--color);
+
+    transition: box-shadow 400ms;
+}
+.mcbf211cd9_navbutton:hover {
+    box-shadow: 3px 3px var(--color);
+}
+.mcbf211cd9_navbutton[data-selected="true"] {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/* qheroes/home/components/gold/gold.css */
+.mc1e7f2ccf_goldwidget {
+    grid-area: gold;
+
+    width: 25rem;
+
+    margin: auto;
+}
+.mc1e7f2ccf_gold {
+    text-align: center;
+}
+.mc1e7f2ccf_mine {
+    font-size: 3rem;
+
+    margin: 0.25rem auto;
+
+    border: 1px solid black;
+
+    box-shadow: 1px 1px black;
+}
+.mc1e7f2ccf_ticks {
+    position: relative;
+
+    width: 1rem;
+
+    margin: auto;
+
+    pointer-events: none;
+}
+.mc1e7f2ccf_tick {
+    --end-x: -5rem;
+    --end-y: -5rem;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    animation-name: mc1e7f2ccf_fade;
+    animation-duration: 3000ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.mc1e7f2ccf_tick[data-source="user"] {
+    color: rgb(47, 139, 47);
+}
+.mc1e7f2ccf_tick[data-source="adventurer"] {
+    color: rgb(138, 55, 172);
+}
+@keyframes mc1e7f2ccf_fade {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}
+/* qheroes/home/components/modal/modal.css */
+.mcc687e49d_layout {
+    position: absolute;
+
+    width: 90vw;
+    height: 50vh;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: auto;
+    padding: 1rem;
+
+    background: white;
+
+    box-shadow: 0 0 15px black;
+
+    border-radius: 1rem;
+}
+.mcc687e49d_close {
+    position: absolute;
+
+    top: -1rem;
+    right: -1rem;
+
+    height: 4rem;
+    width: 4rem;
+
+    font-size: 3rem;
+
+    color: white;
+    background: #ff0000;
+    border: 3px solid white;
+    border-radius: 100%;
+    box-shadow: 0 0 5px black;
+
+    line-height: 0;
+}
+.mcc687e49d_content {
+
+}
+/* qheroes/store/store.css */
+.mc69c30189_header {
+    font-size: 3rem;
+}
+.mc69c30189_offers {
+
+}
+.mc69c30189_offer {
+    display: flex;
+
+    height: 7rem;
+    width: 100%;
+
+    margin-bottom: 1rem;
+
+    justify-content: space-around;
+    border: 1px solid black;
+    font-size: 2.5rem;
+
+    transition: box-shadow 500ms;
+}
+.mc69c30189_offer:hover {
+    box-shadow: 0 0 3px black;
+}
+.mc69c30189_offer[data-available="false"] {
+    color: #d3d3d3;
+    border: 1px solid #d3d3d3;
+}
+/* qheroes/party/party.css */
+.mc14848c1d_party {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+
+    padding: 0.5rem;
+}
+.mc14848c1d_header {
+    font-size: 3rem;
+}
+.mc14848c1d_adventurer {
+    max-width: 14rem;
+
+    border-radius: 1rem;
+    background-color: #ececec;
+}
+.mc14848c1d_pic {
+    width: 6rem;
+    height: 6rem;
+
+    margin: auto;
+
+    border: solid 1px black;
+}
+.mc14848c1d_tag {
+    display: flex;
+
+    justify-content: flex-start;
+
+    padding-left: 1rem;
+
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+.mc14848c1d_level {
+    width: 1.8rem;
+    min-height: 1.8rem;
+
+    border: 1px solid black;
+    border-radius: 15%;
+
+    margin-right: 1rem;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.mc14848c1d_name {
+
+}
+/* qheroes/adventurer/adventurer.css */
+.mc3ce3b453_back {
+    font-size: 2rem;
+
+    border: 1px solid black;
+
+    box-shadow: 1px 1px black;
+}
+.mc3ce3b453_header {
+    font-size: 3rem;
+}
+.mc3ce3b453_pic {
+    width: 10rem;
+    height: 10rem;
+
+    border: 1px solid black;
+}
+/* qheroes/adventurer/components/xpbar.css */
+.mc07ee471c_bar {
+    width: 10rem;
+    height: 1rem;
+
+    margin-top: 0.5rem;
+
+    border: 1px solid black;
+    border-radius: 0.5rem;
+
+    overflow: hidden;
+}
+.mc07ee471c_fill {
+    --fill: 0;
+
+    width: var(--fill, 0);
+    height: 100%;
+    background-color: rgb(90, 142, 226);
+}
