@@ -19,3 +19,56 @@
 
     box-shadow: 1px 1px black;
 }
+
+.ticks {
+    position: relative;
+
+    width: 1rem;
+
+    margin: auto;
+
+    pointer-events: none;
+}
+
+.tick {
+    --end-x: -5rem;
+    --end-y: -5rem;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    animation-name: fade;
+    animation-duration: 3000ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.tick[data-source="user"] {
+    color: rgb(47, 139, 47);
+}
+
+.tick[data-source="adventurer"] {
+    color: rgb(138, 55, 172);
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}

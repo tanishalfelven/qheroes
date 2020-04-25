@@ -7,7 +7,9 @@
     "qheroes/home/components/gold/gold.css": {
         "goldwidget": "mc1e7f2ccf_goldwidget",
         "gold": "mc1e7f2ccf_gold",
-        "mine": "mc1e7f2ccf_mine"
+        "mine": "mc1e7f2ccf_mine",
+        "ticks": "mc1e7f2ccf_ticks",
+        "tick": "mc1e7f2ccf_tick"
     },
     "qheroes/home/components/layout/layout.css": {
         "layout": "mce64e9766_layout"

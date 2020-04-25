@@ -14,6 +14,9 @@
 
 .adventurer {
     max-width: 14rem;
+
+    border-radius: 1rem;
+    background-color: #ececec;
 }
 
 .pic {
@@ -28,7 +31,9 @@
 .tag {
     display: flex;
 
-    justify-content: space-evenly;
+    justify-content: flex-start;
+
+    padding-left: 1rem;
 
     font-size: 1.2rem;
     line-height: 1.8rem;
@@ -40,6 +45,8 @@
 
     border: 1px solid black;
     border-radius: 15%;
+
+    margin-right: 1rem;
 
     font-weight: bold;
     font-size: 1.5rem;

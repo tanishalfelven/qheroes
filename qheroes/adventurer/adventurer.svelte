@@ -9,7 +9,9 @@
     {name}
 </div>
 
-<div class="{css.pic}" />
+<div class="{css.pic}">
+    <AdventurerImg {id} {color} />
+</div>
 
 <div class="{css.tag}">
     LVL {level}
@@ -24,12 +26,15 @@
     import party from "qheroes/shared/stores/adventurers.js";
     import { send } from "qheroes/shared/stores/statechart.js";
 
+    import AdventurerImg from "qheroes/shared/components/adventurer-img.svelte";
+
     export let UID = false;
 
     $: ({
         name,
         id,
         level,
+        color,
         rate,
         interval,
     } = $party.get(UID));

@@ -101,6 +101,54 @@ button {
 
     box-shadow: 1px 1px black;
 }
+.mc1e7f2ccf_ticks {
+    position: relative;
+
+    width: 1rem;
+
+    margin: auto;
+
+    pointer-events: none;
+}
+.mc1e7f2ccf_tick {
+    --end-x: -5rem;
+    --end-y: -5rem;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    animation-name: mc1e7f2ccf_fade;
+    animation-duration: 3000ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.mc1e7f2ccf_tick[data-source="user"] {
+    color: rgb(47, 139, 47);
+}
+.mc1e7f2ccf_tick[data-source="adventurer"] {
+    color: rgb(138, 55, 172);
+}
+@keyframes mc1e7f2ccf_fade {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}
 /* qheroes/home/components/modal/modal.css */
 .mcc687e49d_layout {
     position: absolute;
@@ -187,6 +235,9 @@ button {
 }
 .mc14848c1d_adventurer {
     max-width: 14rem;
+
+    border-radius: 1rem;
+    background-color: #ececec;
 }
 .mc14848c1d_pic {
     width: 6rem;
@@ -199,7 +250,9 @@ button {
 .mc14848c1d_tag {
     display: flex;
 
-    justify-content: space-evenly;
+    justify-content: flex-start;
+
+    padding-left: 1rem;
 
     font-size: 1.2rem;
     line-height: 1.8rem;
@@ -210,6 +263,8 @@ button {
 
     border: 1px solid black;
     border-radius: 15%;
+
+    margin-right: 1rem;
 
     font-weight: bold;
     font-size: 1.5rem;
