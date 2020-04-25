@@ -40,8 +40,6 @@ const addAdventurer = (id) => {
 };
 
 timer(1000, (i) => {
-    let gainedGold = 0;
-
     get(party).forEach(({ UID, rate, interval }) => {
         // refill on interval
         if ((i + UID) % interval) {
@@ -49,12 +47,8 @@ timer(1000, (i) => {
         }
 
 
-        gainedGold += rate;
+        tick(rate);
     });
-
-    if (gainedGold) {
-        tick(gainedGold);
-    }
 });
 
 const readonlyOwned = readonly(owned);

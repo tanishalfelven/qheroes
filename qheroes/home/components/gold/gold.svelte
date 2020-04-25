@@ -2,7 +2,7 @@
 
 <div class="{css.goldwidget}">
     <div class="{css.ticks}">
-        {#each $gains as { amount, from, source } (from)}
+        {#each $gains as { amount, from, source, id } (id)}
         <div
             class="{css.tick}"
             data-source="{source}"

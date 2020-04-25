@@ -7,6 +7,7 @@ const GAIN_TTL = 5000;
 const START_GOLD = flags.DEV && flags.has("gold") ?
     Number.parseInt(flags.get("gold"), 10) :
     0;
+let GAIN_ID = 0;
 
 const gold = writable(START_GOLD);
 const totalGold = writable(START_GOLD);
@@ -33,6 +34,7 @@ const gain = (amount, source) => {
             amount,
             source,
             from: Date.now(),
+            id: GAIN_ID++,
         });
 
         return $gains.filter(({ from }) => (now - from) < GAIN_TTL);

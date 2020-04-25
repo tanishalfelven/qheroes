@@ -5741,6 +5741,7 @@ const GAIN_TTL = 5000;
 const START_GOLD = flags$1.DEV && flags$1.has("gold") ?
     Number.parseInt(flags$1.get("gold"), 10) :
     0;
+let GAIN_ID = 0;
 
 const gold = writable(START_GOLD);
 const totalGold = writable(START_GOLD);
@@ -5767,6 +5768,7 @@ const gain = (amount, source) => {
             amount,
             source,
             from: Date.now(),
+            id: GAIN_ID++,
         });
 
         return $gains.filter(({ from }) => (now - from) < GAIN_TTL);
@@ -5891,8 +5893,6 @@ const addAdventurer = (id) => {
 };
 
 timer(1000, (i) => {
-    let gainedGold = 0;
-
     get_store_value(party).forEach(({ UID, rate, interval }) => {
         // refill on interval
         if ((i + UID) % interval) {
@@ -5900,12 +5900,8 @@ timer(1000, (i) => {
         }
 
 
-        gainedGold += rate;
+        tick(rate);
     });
-
-    if (gainedGold) {
-        tick(gainedGold);
-    }
 });
 
 const readonlyOwned = readonly(owned);
@@ -6240,10 +6236,11 @@ function get_each_context(ctx, list, i) {
 	child_ctx[2] = list[i].amount;
 	child_ctx[3] = list[i].from;
 	child_ctx[4] = list[i].source;
+	child_ctx[5] = list[i].id;
 	return child_ctx;
 }
 
-// (3:8) {#each $gains as { amount, from, source }
+// (3:8) {#each $gains as { amount, from, source, id }
 function create_each_block(key_1, ctx) {
 	let div;
 	let t0;
@@ -6264,7 +6261,7 @@ function create_each_block(key_1, ctx) {
 			attr_dev(div, "data-source", div_data_source_value = /*source*/ ctx[4]);
 			set_style(div, "--end-x", randomInt(-5, 5) + "rem");
 			set_style(div, "--end-y", randomInt(-5, -1) + "rem");
-			add_location(div, file$2, 3, 8, 140);
+			add_location(div, file$2, 3, 8, 142);
 			this.first = div;
 		},
 		m: function mount(target, anchor) {
@@ -6289,7 +6286,7 @@ function create_each_block(key_1, ctx) {
 		block,
 		id: create_each_block.name,
 		type: "each",
-		source: "(3:8) {#each $gains as { amount, from, source }",
+		source: "(3:8) {#each $gains as { amount, from, source, id }",
 		ctx
 	});
 
@@ -6310,7 +6307,7 @@ function create_fragment$2(ctx) {
 	let dispose;
 	let each_value = /*$gains*/ ctx[0];
 	validate_each_argument(each_value);
-	const get_key = ctx => /*from*/ ctx[3];
+	const get_key = ctx => /*id*/ ctx[5];
 	validate_each_keys(ctx, each_value, get_each_context, get_key);
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -6338,9 +6335,9 @@ function create_fragment$2(ctx) {
 			attr_dev(div0, "class", "mc1e7f2ccf_ticks");
 			add_location(div0, file$2, 1, 4, 41);
 			attr_dev(div1, "class", "mc1e7f2ccf_gold");
-			add_location(div1, file$2, 16, 4, 433);
+			add_location(div1, file$2, 16, 4, 435);
 			attr_dev(button, "class", "mc1e7f2ccf_mine");
-			add_location(button, file$2, 20, 4, 502);
+			add_location(button, file$2, 20, 4, 504);
 			attr_dev(div2, "class", "mc1e7f2ccf_goldwidget");
 			add_location(div2, file$2, 0, 0, 0);
 		},
